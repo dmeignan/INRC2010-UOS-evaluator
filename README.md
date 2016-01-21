@@ -1,9 +1,7 @@
 INRC 2010 evaluator
 ===================
 
-Evaluator for the INRC2010 benchmark [Haspeslagh et al 2014]. This benchmark has been proposed for the first International
-Nurse Rostering Competition held in 2010. The evaluator is based on the model given in [Lü and Hao 2012] and used in 
-[Meignan et al. 2015], [Meignan 2014] and  [Meignan 2015].
+Evaluator, developed by the University of Osnabrück, for the INRC2010 benchmark [Haspeslagh et al 2014]. The INRC2010 benchmark has been proposed for the first International Nurse Rostering Competition held in 2010. The evaluator is based on the model given in [Lü and Hao 2012] and has been used in [Meignan et al. 2015], [Meignan 2014] and  [Meignan 2015].
 
 References
 ----------
