@@ -17,7 +17,7 @@ import org.joda.time.format.ISODateTimeFormat;
  * @author David Meignan
  */
 public class Messages {
-	private static final String BUNDLE_NAME = "de.uos.inf.ischedule.ui.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "de.uos.inf.ischedule.util.messages"; //$NON-NLS-1$
 
 	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle
 			.getBundle(BUNDLE_NAME);

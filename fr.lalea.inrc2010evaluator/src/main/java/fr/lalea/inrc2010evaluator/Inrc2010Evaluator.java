@@ -92,6 +92,7 @@ public class Inrc2010Evaluator {
 		printEvaluation(solution);
 		System.out.println();
 		printUnsatisfiedConstraints(solution);
+		System.exit(0);
 	}
 
 	/**
@@ -101,7 +102,7 @@ public class Inrc2010Evaluator {
 	 */
 	private static void printUnsatisfiedConstraints(Solution solution) {
 		ArrayList<ConstraintViolation> cv = solution.getConstraintViolations();
-		System.out.println("Constraint unsatisfied: " + cv.size());
+		System.out.println("Number of constraint unsatisfied: " + cv.size());
 		for (ConstraintViolation v: cv) {
 			System.out.print(v.getMessage());
 			System.out.print("\t Scope: ");
@@ -119,11 +120,11 @@ public class Inrc2010Evaluator {
 	private static void printEvaluation(Solution solution) {
 		SolutionEvaluation evaluation = solution.getEvaluation();
 		if (evaluation.getNbRanks() == 2) {
-			System.out.println("Hard constraints: "+ evaluation.getCost(0));
-			System.out.println("Soft constraints: "+ evaluation.getCost(1));
+			System.out.println("Cost of hard constraints: "+ evaluation.getCost(0));
+			System.out.println("Cost of soft constraints: "+ evaluation.getCost(1));
 		} else {
 			for (int rank=1; rank<=evaluation.getNbRanks(); rank++) {
-				System.out.println("Constraints of rank "+ rank + ": " +
+				System.out.println("Cost of the constraints of rank "+ rank + ": " +
 						evaluation.getCost(rank-1));
 			}
 		}

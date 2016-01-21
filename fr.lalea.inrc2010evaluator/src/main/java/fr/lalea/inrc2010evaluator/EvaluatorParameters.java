@@ -52,11 +52,11 @@ public class EvaluatorParameters {
 		File problemFile = new File(problemFilePath);
 		File solutionFile = new File(problemFilePath);
 		try {
-			if (problemFile.isFile()) {
+			if (!problemFile.isFile()) {
 				throw new ParameterException("The problem file cannot be found"
 						+ ".");
 			}
-			if (solutionFile.isFile()) {
+			if (!solutionFile.isFile()) {
 				throw new ParameterException("The solution file cannot be found"
 						+ ".");
 			}
