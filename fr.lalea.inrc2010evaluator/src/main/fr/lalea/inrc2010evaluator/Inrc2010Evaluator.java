@@ -4,6 +4,18 @@
  */
 package fr.lalea.inrc2010evaluator;
 
+import java.util.ArrayList;
+
+import com.beust.jcommander.JCommander;
+
+import de.uos.inf.ischedule.model.ConstraintViolation;
+import de.uos.inf.ischedule.model.Schedule;
+import de.uos.inf.ischedule.model.ShiftSchedulingProblem;
+import de.uos.inf.ischedule.model.Solution;
+import de.uos.inf.ischedule.model.SolutionEvaluation;
+import de.uos.inf.ischedule.model.inrc.InrcProblemFactory;
+import de.uos.inf.ischedule.model.inrc.InrcSolutionFactory;
+
 /**
  * Evaluator for the INRC2010 benchmark, based on the model of 
  * [Lü and Hao 2009] and used in [Meignan et al. 2015], [Meignan 2014] and 
@@ -32,11 +44,89 @@ package fr.lalea.inrc2010evaluator;
 public class Inrc2010Evaluator {
 
 	/**
-	 * @param args
+	 * Runs the evaluator for one solution and print the evaluation.
+	 * 
+	 * The required arguments are:
+	 * <ul>
+	 * <li><code>-p [PROBLEM]</code> The XML file of the problem instance,</li>
+	 * <li><code>-s [SOLUTION]</code> The XML file of the solution to evaluate.
+	 * </li>
+	 * </ul>
+	 * 
+	 * @param args the arguments that are managed by the 
+	 * <code>EvaluatorParameter</code> class.
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// Parse parameters
+		EvaluatorParameters params = new EvaluatorParameters();
+		try {
+			new JCommander(params, args);
+			params.validate();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			System.exit(1);
+		}
+		
+		// Parse problem file
+		ShiftSchedulingProblem problem = null;
+		try {
+			problem = InrcProblemFactory.loadProblem(params.getProblemFile());
+		} catch (Exception e) {
+			System.err.println("Problem-file parsing failed.");
+			System.exit(1);
+		}
+		
+		// Parse solution file
+		Solution solution = null;
+		try {
+			Schedule s = InrcSolutionFactory.loadXMLSchedule(
+					params.getSolutionFile(), problem);
+			solution = s.toSolution();
+		} catch (Exception e) {
+			System.err.println("Solution-file parsing failed.");
+			System.exit(1);
+		}
+		
+		// Print the evaluation
+		printEvaluation(solution);
+		System.out.println();
+		printUnsatisfiedConstraints(solution);
+	}
 
+	/**
+	 * Prints the constraints that are violated in the solution.
+	 * 
+	 * @param solution the evaluated solution.
+	 */
+	private static void printUnsatisfiedConstraints(Solution solution) {
+		ArrayList<ConstraintViolation> cv = solution.getConstraintViolations();
+		System.out.println("Constraint unsatisfied: " + cv.size());
+		for (ConstraintViolation v: cv) {
+			System.out.print(v.getMessage());
+			System.out.print("\t Scope: ");
+			System.out.print(v.getConstraintViolationScopeDescription());
+			System.out.print("\t Cost: ");
+			System.out.println(v.getCost());
+		}
+	}
+
+	/**
+	 * Prints the evaluation value of the solution.
+	 * 
+	 * @param solution the evaluated solution.
+	 */
+	private static void printEvaluation(Solution solution) {
+		SolutionEvaluation evaluation = solution.getEvaluation();
+		if (evaluation.getNbRanks() == 2) {
+			System.out.println("Hard constraints: "+ evaluation.getCost(0));
+			System.out.println("Soft constraints: "+ evaluation.getCost(1));
+		} else {
+			for (int rank=1; rank<=evaluation.getNbRanks(); rank++) {
+				System.out.println("Constraints of rank "+ rank + ": " +
+						evaluation.getCost(rank-1));
+			}
+		}
 	}
 
 }
