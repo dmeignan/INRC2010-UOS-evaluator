@@ -20,3 +20,16 @@ target/
 
 # ignore all files ending with ~
 *~ 
+
+# NetBean / Eclipse
+bin
+*.java._trace
+*.java_trace
+*.smap
+.project
+.classpath
+.settings
+.metadata
+
+#Others
+.DS_Store
