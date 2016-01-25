@@ -131,8 +131,8 @@ public class SkillCoverageConstraint implements Constraint {
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(employeeIndex);
 					if (assignment != null) {
-						missingSkills += assignment.missingSkills(
-								solution.employees.get(employeeIndex));
+						if (assignment.missingSkills(solution.employees.get(employeeIndex)) > 0)
+							missingSkills ++;
 					}
 				}
 			}
@@ -153,8 +153,9 @@ public class SkillCoverageConstraint implements Constraint {
 			if (!constrainedEmployeeIndexes.contains(employeeIndex))
 				return 0;
 			// Verify skills
-			return shift.missingSkills(
-					solution.employees.get(employeeIndex))*weightValue;
+			if (shift.missingSkills(solution.employees.get(employeeIndex))>0)
+				return weightValue;
+			return 0;
 		}
 
 		/* (non-Javadoc)
@@ -187,9 +188,9 @@ public class SkillCoverageConstraint implements Constraint {
 						dayIndex++) {
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee1Index());
-					if (assignment != null) {
-						initialMissingSkills += assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee1Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee1Index())) > 0) {
+						initialMissingSkills ++;
 					}
 				}
 				// Swap
@@ -198,9 +199,9 @@ public class SkillCoverageConstraint implements Constraint {
 						dayIndex++) {
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee2Index());
-					if (assignment != null) {
-						swapMissingSkills += assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee1Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee1Index())) > 0) {
+						swapMissingSkills ++;
 					}
 				}
 			}
@@ -213,9 +214,9 @@ public class SkillCoverageConstraint implements Constraint {
 						dayIndex++) {
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee2Index());
-					if (assignment != null) {
-						initialMissingSkills += assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee2Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee2Index())) > 0) {
+						initialMissingSkills ++;
 					}
 				}
 				// Swap
@@ -224,9 +225,9 @@ public class SkillCoverageConstraint implements Constraint {
 						dayIndex++) {
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee1Index());
-					if (assignment != null) {
-						swapMissingSkills += assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee2Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee2Index())) > 0) {
+						swapMissingSkills ++;
 					}
 				}
 			}
@@ -262,7 +263,7 @@ public class SkillCoverageConstraint implements Constraint {
 						if (missingSkills > 0) {
 							ConstraintViolation violation = new ConstraintViolation(
 									SkillCoverageConstraint.this);
-							violation.setCost(weightValue*missingSkills);
+							violation.setCost(weightValue);
 							violation.setMessage(Messages.getString("SkillCoverageConstraint.insufficientSkills")); //$NON-NLS-1$
 							violation.addAssignmentInScope(
 									solution.employees.get(employeeIndex), 
@@ -305,15 +306,15 @@ public class SkillCoverageConstraint implements Constraint {
 					int swapMissingSkills = 0;
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee1Index());
-					if (assignment != null) {
-						initialMissingSkills = assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee1Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee1Index())) > 0) {
+						initialMissingSkills = 1;
 					}
 					assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee2Index());
-					if (assignment != null) {
-						swapMissingSkills = assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee1Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee1Index())) > 0) {
+						swapMissingSkills = 1;
 					}
 					if (initialMissingSkills > 0 && swapMissingSkills == 0) {
 						diff[0]++;
@@ -332,15 +333,15 @@ public class SkillCoverageConstraint implements Constraint {
 					int swapMissingSkills = 0;
 					Shift assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee2Index());
-					if (assignment != null) {
-						initialMissingSkills = assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee2Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee2Index())) > 0) {
+						initialMissingSkills = 1;
 					}
 					assignment = solution.assignments.get(dayIndex)
 							.get(swapMove.getEmployee1Index());
-					if (assignment != null) {
-						swapMissingSkills = assignment.missingSkills(
-								solution.employees.get(swapMove.getEmployee2Index()));
+					if (assignment != null && assignment.missingSkills(
+							solution.employees.get(swapMove.getEmployee2Index())) > 0) {
+						swapMissingSkills = 1;
 					}
 					if (initialMissingSkills > 0 && swapMissingSkills == 0) {
 						diff[0]++;
