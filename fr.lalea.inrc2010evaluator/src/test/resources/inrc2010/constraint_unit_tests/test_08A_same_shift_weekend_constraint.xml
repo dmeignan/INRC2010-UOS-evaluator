@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SchedulingPeriod ID="test_08" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="competition.xsd">
+  <StartDate>2013-08-05</StartDate> <!-- Starting date is on Monday -->
+  <EndDate>2013-08-11</EndDate> <!-- End date is on Sunday -->
+  <Skills>
+    <Skill>Skill_A</Skill>
+  </Skills>
+  <ShiftTypes>
+    <Shift ID="D1">
+      <StartTime>06:30:00</StartTime>
+      <EndTime>14:30:00</EndTime>
+      <Description>Early</Description>
+      <Skills>
+        <Skill>Skill_A</Skill>
+      </Skills>
+    </Shift>
+    <Shift ID="D2">
+      <StartTime>14:30:00</StartTime>
+      <EndTime>14:30:00</EndTime>
+      <Description>Late</Description>
+      <Skills>
+        <Skill>Skill_A</Skill>
+      </Skills>
+    </Shift>
+  </ShiftTypes>
+  <Patterns>
+  </Patterns>
+  <Contracts>
+    <Contract ID="0">
+      <Description>fulltime1</Description>
+      <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
+      <MaxNumAssignments on="0" weight="0">7</MaxNumAssignments>
+      <MinNumAssignments on="0" weight="0">7</MinNumAssignments>
+      <MaxConsecutiveWorkingDays on="0" weight="0">7</MaxConsecutiveWorkingDays>
+      <MinConsecutiveWorkingDays on="0" weight="0">3</MinConsecutiveWorkingDays>
+      <MaxConsecutiveFreeDays on="0" weight="0">2</MaxConsecutiveFreeDays>
+      <MinConsecutiveFreeDays on="0" weight="0">1</MinConsecutiveFreeDays>
+      <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
+      <MinConsecutiveWorkingWeekends on="0" weight="0">2</MinConsecutiveWorkingWeekends>
+      <MaxWorkingWeekendsInFourWeeks on="0" weight="0">2</MaxWorkingWeekendsInFourWeeks>
+      <WeekendDefinition>SaturdaySunday</WeekendDefinition>
+      <CompleteWeekends weight="0">false</CompleteWeekends>
+      <IdenticalShiftTypesDuringWeekend weight="10">true</IdenticalShiftTypesDuringWeekend>
+      <NoNightShiftBeforeFreeWeekend weight="0">false</NoNightShiftBeforeFreeWeekend>
+      <AlternativeSkillCategory weight="0">false</AlternativeSkillCategory>
+      <UnwantedPatterns>
+      </UnwantedPatterns>
+    </Contract>
+    <Contract ID="1">
+      <Description>fulltime2</Description>
+      <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
+      <MaxNumAssignments on="0" weight="0">7</MaxNumAssignments>
+      <MinNumAssignments on="0" weight="0">7</MinNumAssignments>
+      <MaxConsecutiveWorkingDays on="0" weight="0">7</MaxConsecutiveWorkingDays>
+      <MinConsecutiveWorkingDays on="0" weight="0">3</MinConsecutiveWorkingDays>
+      <MaxConsecutiveFreeDays on="0" weight="0">2</MaxConsecutiveFreeDays>
+      <MinConsecutiveFreeDays on="0" weight="0">1</MinConsecutiveFreeDays>
+      <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
+      <MinConsecutiveWorkingWeekends on="0" weight="0">2</MinConsecutiveWorkingWeekends>
+      <MaxWorkingWeekendsInFourWeeks on="0" weight="0">2</MaxWorkingWeekendsInFourWeeks>
+      <WeekendDefinition>SaturdaySunday</WeekendDefinition>
+      <CompleteWeekends weight="0">false</CompleteWeekends>
+      <IdenticalShiftTypesDuringWeekend weight="100">true</IdenticalShiftTypesDuringWeekend>
+      <NoNightShiftBeforeFreeWeekend weight="0">false</NoNightShiftBeforeFreeWeekend>
+      <AlternativeSkillCategory weight="0">false</AlternativeSkillCategory>
+      <UnwantedPatterns>
+      </UnwantedPatterns>
+    </Contract>
+    <Contract ID="2">
+      <Description>fulltime3</Description>
+      <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
+      <MaxNumAssignments on="0" weight="0">7</MaxNumAssignments>
+      <MinNumAssignments on="0" weight="0">7</MinNumAssignments>
+      <MaxConsecutiveWorkingDays on="0" weight="0">7</MaxConsecutiveWorkingDays>
+      <MinConsecutiveWorkingDays on="0" weight="0">3</MinConsecutiveWorkingDays>
+      <MaxConsecutiveFreeDays on="0" weight="0">2</MaxConsecutiveFreeDays>
+      <MinConsecutiveFreeDays on="0" weight="0">1</MinConsecutiveFreeDays>
+      <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
+      <MinConsecutiveWorkingWeekends on="0" weight="0">2</MinConsecutiveWorkingWeekends>
+      <MaxWorkingWeekendsInFourWeeks on="0" weight="0">2</MaxWorkingWeekendsInFourWeeks>
+      <WeekendDefinition>SaturdaySunday</WeekendDefinition>
+      <CompleteWeekends weight="0">false</CompleteWeekends>
+      <IdenticalShiftTypesDuringWeekend weight="1000">true</IdenticalShiftTypesDuringWeekend>
+      <NoNightShiftBeforeFreeWeekend weight="0">false</NoNightShiftBeforeFreeWeekend>
+      <AlternativeSkillCategory weight="0">false</AlternativeSkillCategory>
+      <UnwantedPatterns>
+      </UnwantedPatterns>
+    </Contract>
+  </Contracts>
+  <Employees>
+    <Employee ID="0">
+      <ContractID>0</ContractID>
+      <Name>Employee 01</Name>
+      <Skills>
+        <Skill>Skill_A</Skill>
+      </Skills>
+    </Employee>
+    <Employee ID="1">
+      <ContractID>1</ContractID>
+      <Name>Employee 02</Name>
+      <Skills>
+        <Skill>Skill_A</Skill>
+      </Skills>
+    </Employee>
+    <Employee ID="2">
+      <ContractID>2</ContractID>
+      <Name>Employee 03</Name>
+      <Skills>
+        <Skill>Skill_A</Skill>
+      </Skills>
+    </Employee>
+  </Employees>
+  <CoverRequirements>
+    <DayOfWeekCover>
+      <Day>Monday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+    </DayOfWeekCover>
+    <DayOfWeekCover>
+      <Day>Tuesday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+    </DayOfWeekCover>
+    <DayOfWeekCover>
+      <Day>Wednesday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+    </DayOfWeekCover>
+    <DayOfWeekCover>
+      <Day>Thursday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>1</Preferred>
+     </Cover>
+    </DayOfWeekCover>
+    <DayOfWeekCover>
+      <Day>Friday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>2</Preferred>
+      </Cover>
+    </DayOfWeekCover>
+    <DayOfWeekCover>
+      <Day>Saturday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>2</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+    </DayOfWeekCover>
+    <DayOfWeekCover>
+      <Day>Sunday</Day>
+      <Cover>
+        <Shift>D1</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+      <Cover>
+        <Shift>D2</Shift>
+        <Preferred>1</Preferred>
+      </Cover>
+    </DayOfWeekCover>
+  </CoverRequirements>
+</SchedulingPeriod>

@@ -1,0 +1,52 @@
+test 1 - solution 1: 0
+test 1 - solution 2: 0 (Hard constraint: 2)
+test 1 - solution 3: 0 (Hard constraint: 1)
+
+test 2 - solution 1: 0
+test 2 - solution 2: 11
+
+test 3A - solution 1: 0
+test 3A - solution 2: 10
+
+test 3B - solution 1: 0
+test 3B - solution 2: 10
+
+test 3C - solution 1: 0
+test 3C - solution 2: 10
+
+test 3D - solution 1: 0
+test 3D - solution 2: 10
+
+test 4 - solution 1: 0
+test 4 - solution 2: 220
+
+test 5 - solution 1: 0
+test 5 - solution 2: 220
+
+test 6 - solution 1: 0
+test 6 - solution 2: 110
+test 6 - solution 3: 200
+test 6 - solution 4: 110
+
+test 6B - solution 1: 100
+
+test 7 - solution 1: 0
+test 7 - solution 2: 410
+test 7 - solution 3: 200
+test 7 - solution 4: 100
+
+test 8A - solution 1: 0
+test 8A - solution 2: 220
+
+test 8B - solution 1: 0
+test 8B - solution 2: 320
+
+test 9 - solution 1: 0
+test 9 - solution 2: 0
+
+test 10 - solution 1: 0
+test 10 - solution 2: 110
+
+test 11 - solution 1: 0
+test 11 - solution 2: 20
+test 11 - solution 3: 120

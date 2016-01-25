@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SchedulingPeriod ID="test_04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="competition.xsd">
+<SchedulingPeriod ID="test_05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="competition.xsd">
   <StartDate>2013-08-05</StartDate> <!-- Starting date is on Monday -->
   <EndDate>2013-08-11</EndDate> <!-- End date is on Sunday -->
   <Skills>
@@ -19,12 +19,12 @@
   </Patterns>
   <Contracts>
     <Contract ID="0">
-      <Description>fulltime</Description>
+      <Description>fulltime1</Description>
       <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
-      <MaxNumAssignments on="1" weight="1">7</MaxNumAssignments>
-      <MinNumAssignments on="1" weight="1">7</MinNumAssignments>
-      <MaxConsecutiveWorkingDays on="0" weight="0">8</MaxConsecutiveWorkingDays>
-      <MinConsecutiveWorkingDays on="0" weight="0">2</MinConsecutiveWorkingDays>
+      <MaxNumAssignments on="0" weight="0">7</MaxNumAssignments>
+      <MinNumAssignments on="0" weight="0">7</MinNumAssignments>
+      <MaxConsecutiveWorkingDays on="1" weight="10">7</MaxConsecutiveWorkingDays>
+      <MinConsecutiveWorkingDays on="1" weight="10">3</MinConsecutiveWorkingDays>
       <MaxConsecutiveFreeDays on="0" weight="0">7</MaxConsecutiveFreeDays>
       <MinConsecutiveFreeDays on="0" weight="0">1</MinConsecutiveFreeDays>
       <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
@@ -39,12 +39,12 @@
       </UnwantedPatterns>
     </Contract>
     <Contract ID="1">
-      <Description>fulltime</Description>
+      <Description>fulltime2</Description>
       <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
-      <MaxNumAssignments on="1" weight="10">5</MaxNumAssignments>
-      <MinNumAssignments on="1" weight="10">3</MinNumAssignments>
-      <MaxConsecutiveWorkingDays on="0" weight="0">8</MaxConsecutiveWorkingDays>
-      <MinConsecutiveWorkingDays on="0" weight="0">2</MinConsecutiveWorkingDays>
+      <MaxNumAssignments on="0" weight="0">5</MaxNumAssignments>
+      <MinNumAssignments on="0" weight="0">3</MinNumAssignments>
+      <MaxConsecutiveWorkingDays on="1" weight="100">5</MaxConsecutiveWorkingDays>
+      <MinConsecutiveWorkingDays on="1" weight="100">3</MinConsecutiveWorkingDays>
       <MaxConsecutiveFreeDays on="0" weight="0">7</MaxConsecutiveFreeDays>
       <MinConsecutiveFreeDays on="0" weight="0">1</MinConsecutiveFreeDays>
       <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
@@ -101,7 +101,7 @@
       <Day>Thursday</Day>
       <Cover>
         <Shift>D</Shift>
-        <Preferred>2</Preferred>
+        <Preferred>1</Preferred>
       </Cover>
     </DayOfWeekCover>
     <DayOfWeekCover>

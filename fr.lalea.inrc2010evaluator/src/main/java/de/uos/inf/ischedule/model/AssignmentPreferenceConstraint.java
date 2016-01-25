@@ -822,4 +822,5 @@ public class AssignmentPreferenceConstraint implements Constraint {
 	public boolean cover(Employee employee) {
 		return true;
 	}
+
 }

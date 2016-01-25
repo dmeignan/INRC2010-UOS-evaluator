@@ -19,14 +19,14 @@
   </Patterns>
   <Contracts>
     <Contract ID="0">
-      <Description>fulltime</Description>
+      <Description>fulltime1</Description>
       <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
       <MaxNumAssignments on="0" weight="0">7</MaxNumAssignments>
       <MinNumAssignments on="0" weight="0">7</MinNumAssignments>
       <MaxConsecutiveWorkingDays on="0" weight="0">7</MaxConsecutiveWorkingDays>
       <MinConsecutiveWorkingDays on="0" weight="0">3</MinConsecutiveWorkingDays>
-      <MaxConsecutiveFreeDays on="1" weight="1">2</MaxConsecutiveFreeDays>
-      <MinConsecutiveFreeDays on="1" weight="1">1</MinConsecutiveFreeDays>
+      <MaxConsecutiveFreeDays on="1" weight="10">2</MaxConsecutiveFreeDays>
+      <MinConsecutiveFreeDays on="1" weight="10">1</MinConsecutiveFreeDays>
       <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
       <MinConsecutiveWorkingWeekends on="0" weight="0">2</MinConsecutiveWorkingWeekends>
       <MaxWorkingWeekendsInFourWeeks on="0" weight="0">2</MaxWorkingWeekendsInFourWeeks>
@@ -39,14 +39,14 @@
       </UnwantedPatterns>
     </Contract>
     <Contract ID="1">
-      <Description>fulltime</Description>
+      <Description>fulltime2</Description>
       <SingleAssignmentPerDay weight="1">true</SingleAssignmentPerDay>
       <MaxNumAssignments on="0" weight="0">5</MaxNumAssignments>
       <MinNumAssignments on="0" weight="0">3</MinNumAssignments>
       <MaxConsecutiveWorkingDays on="0" weight="0">5</MaxConsecutiveWorkingDays>
       <MinConsecutiveWorkingDays on="0" weight="0">3</MinConsecutiveWorkingDays>
-      <MaxConsecutiveFreeDays on="1" weight="10">3</MaxConsecutiveFreeDays>
-      <MinConsecutiveFreeDays on="1" weight="10">2</MinConsecutiveFreeDays>
+      <MaxConsecutiveFreeDays on="1" weight="100">3</MaxConsecutiveFreeDays>
+      <MinConsecutiveFreeDays on="1" weight="100">3</MinConsecutiveFreeDays>
       <MaxConsecutiveWorkingWeekends on="0" weight="0">2</MaxConsecutiveWorkingWeekends>
       <MinConsecutiveWorkingWeekends on="0" weight="0">2</MinConsecutiveWorkingWeekends>
       <MaxWorkingWeekendsInFourWeeks on="0" weight="0">2</MaxWorkingWeekendsInFourWeeks>
