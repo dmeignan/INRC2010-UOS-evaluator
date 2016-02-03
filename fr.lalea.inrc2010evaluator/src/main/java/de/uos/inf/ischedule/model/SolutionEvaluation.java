@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * A <code>SolutionEvaluation</code> represents the cost of a solution.
- * Each constraint rank have a cost value. Comparison of two evaluations
+ * Each constraint rank has a cost value. Comparison of two evaluations
  * of solution uses lexicographic order.
  * Note that an evaluation is immutable.
  * 
