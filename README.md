@@ -1,7 +1,18 @@
 INRC 2010 evaluator
 ===================
 
-Evaluator, developed by the University of Osnabrück, for the INRC2010 benchmark [Haspeslagh et al 2014]. The INRC2010 benchmark has been proposed for the first International Nurse Rostering Competition held in 2010. The evaluator is based on the model given in [Lü and Hao 2012] and has been used in [Meignan et al. 2015], [Meignan 2014] and  [Meignan 2015].
+Evaluator, developed by the Combinatorial Optimization Team of the University of Osnabrück, for the INRC2010 benchmark [Haspeslagh et al 2014]. The INRC2010 benchmark has been proposed for the first International Nurse Rostering Competition held in 2010. The evaluator is based on the model given in [Lü and Hao 2012] and has been used in [Meignan et al. 2015], [Meignan 2014] and  [Meignan 2015].
+
+Usage
+-----
+
+With the JAR file (available in the list of releases), you can run the evaluator directly from the command line using the command:
+> java -jar inrc2010evaluator-v1.0.jar -p [PROBLEM-FILE.xml] -s [SOLUTION-FILE.xml]
+
+Unit tests of constraint
+------------------------
+
+A series of tests has been developed to ensure that the evaluator is conform to the model presented in [Lü and Hao 2012]. These "unit test of constraints" are pairs of problem/solution that each tests a specific constraint. The test files and results are in the directory: <https://github.com/dmeignan/INRC2010-UOS-evaluator/tree/master/fr.lalea.inrc2010evaluator/src/test/resources/inrc2010/constraint_unit_tests> 
 
 References
 ----------
